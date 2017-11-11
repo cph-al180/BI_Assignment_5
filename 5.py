@@ -34,10 +34,12 @@ def train():
     regr = linear_model.LinearRegression()
     regr.fit(x, y)
 
+    #x skal være 2d array der indeholder både train_created og train_karma, men hvad skal y være????
+
 def run():
     getData()
     formatData()
-    train()
+    #train()
     print('done')
 
 run()
