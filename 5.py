@@ -1,8 +1,9 @@
 import json
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import linear_model
 
-traindata = 'training.json'
+traindata = 'training2.json'
 testdata = 'testing.json'
   
 def getData():
@@ -18,28 +19,34 @@ def formatData():
     global train_created
     global test_karma
     global test_created
+    global np_train
+    
     train_karma = []
     train_created = []
     test_karma = []
     test_created = []
+    
     for i in training_data:
         train_karma.append(i["karma"])
         train_created.append(i["created"])
+        
     for j in testing_data:
         test_karma.append(j["karma"])
         test_created.append(j["created"])
+        
+    train_created = np.array([train_created])
+    train_created = train_created.T
+    print(train_created)
 
 def train():
     x,y = train_created, train_karma
-    regr = linear_model.LinearRegression()
-    regr.fit(x, y)
-
-    #x skal være 2d array der indeholder både train_created og train_karma, men hvad skal y være????
+    model = linear_model.LinearRegression()
+    model.fit(x, y)
 
 def run():
     getData()
     formatData()
-    #train()
+    train()
     print('done')
 
 run()
