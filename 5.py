@@ -43,6 +43,9 @@ def train():
     model = linear_model.LinearRegression()
     model.fit(x, y)
 
+    plt.scatter(x,y)
+    plt.show()
+
 def run():
     getData()
     formatData()
