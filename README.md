@@ -34,7 +34,7 @@ def calcMAE():
     test_MAE = mean_absolute_error(test_karma, test_karma_pred)
 ```
 ## Part 3 - Mean Squared Error  
-The MSE results that I've ended up with are very confusing to me, considering they're supposed to be between `0` and `1` (best to worst), and I've been unable to figure out why they don't make sense.
+The MSE results that I've ended up with are very confusing to me, considering they're supposed to be between `0` and `1` (best to worst), and I've been unable to figure out why they don't make sense.  
 `MSE (training): 104656390.75364754`   
 `MSE (testing): 61750043.01901821`  
 ```python
