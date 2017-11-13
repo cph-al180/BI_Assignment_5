@@ -2,7 +2,9 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import linear_model
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 from pylab import polyfit, poly1d
+from scipy.stats.stats import pearsonr
 
 traindata = 'training2.json'
 testdata = 'testing.json'
@@ -21,12 +23,14 @@ def formatData():
     global test_karma
     global test_created
     global TRAIN_CREATED
+    global TEST_CREATED
     
     train_karma = []
     train_created = []
     test_karma = []
     test_created = []
     TRAIN_CREATED = []
+    TEST_CREATED = []
     
     for i in training_data:
         train_karma.append(i["karma"])
@@ -37,9 +41,10 @@ def formatData():
         test_created.append(j["created"])
         
     TRAIN_CREATED = np.array([train_created])
-    TRAIN_CREATED = TRAIN_CREATED.T    
+    TRAIN_CREATED = TRAIN_CREATED.T
+    TEST_CREATED = np.array([test_created])
+    TEST_CREATED = TEST_CREATED.T
 
-#Part 1
 def trainAndPlot():
     global model
     
@@ -54,10 +59,40 @@ def trainAndPlot():
     plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
     plt.show()
 
+def calcMAE():
+    train_karma_pred = model.predict(TRAIN_CREATED)
+    test_karma_pred = model.predict(TEST_CREATED)
+    
+    train_MAE = mean_absolute_error(train_karma, train_karma_pred)
+    test_MAE = mean_absolute_error(test_karma, test_karma_pred)
+
+    print('Train MAE: ', train_MAE)
+    print('Test MAE: ', test_MAE)
+
+def calcMSE():
+    train_karma_pred = model.predict(TRAIN_CREATED)
+    test_karma_pred = model.predict(TEST_CREATED)
+
+    train_MSE = mean_squared_error(train_karma, train_karma_pred)
+    test_MSE = mean_squared_error(test_karma, test_karma_pred)
+    
+    print('Train MSE: ', train_MSE)
+    print('Test MSE: ', test_MSE)
+
+def calcPR():
+    train_PR = pearsonr(train_created, train_karma)
+    test_PR = pearsonr(test_created, test_karma)
+
+    print('Train PR: ', train_PR)
+    print('Test PR: ', test_PR)
+
 def run():
     getData()
     formatData()
     trainAndPlot()
+    calcMAE()
+    calcMSE()
+    calcPR()
     print('done')
 
 run()
