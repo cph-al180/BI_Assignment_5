@@ -35,6 +35,7 @@ def calcMAE():
 ```
 ## Part 3 - Mean Squared Error  
 The MSE results that I've ended up with are very confusing to me, considering they're supposed to be between `0` and `1` (best to worst), and I've been unable to figure out why they don't make sense.  
+  
 `MSE (training): 104656390.75364754`   
 `MSE (testing): 61750043.01901821`  
 ```python
@@ -46,6 +47,7 @@ def calcMSE():
 ```
 ## Part 4 - Pearson's r
 Pearson's r value describes the correlation between 2 variables, which in our case is `created`and `karma`. The result is between `-1` and `1`. This value is representated by the linear regression line in the scatter plot image. Pearson's r is different from MAE and MSE because it calculates the correlation between `x`and `y` values throughout an entire data-set, and does not take into account any predicted values.  
+  
 `r (training): -0.35941580366452558`   
 `r (testing): -0.36569769103632976`  
 ```python
