@@ -26,15 +26,27 @@ Write about MAE
 def calcMAE():
     train_karma_pred = model.predict(TRAIN_CREATED)
     test_karma_pred = model.predict(TEST_CREATED)
-    
     train_MAE = mean_absolute_error(train_karma, train_karma_pred)
     test_MAE = mean_absolute_error(test_karma, test_karma_pred)
-    
-    print('Train MAE: ', train_MAE)
-    print('Test MAE: ', test_MAE)
 ```
-## Part 3 - Mean Squared Error
-
+## Part 3 - Mean Squared Error  
+Write about MSE  
+`MSE (training): 104656390.75364754`   
+`MSE (testing): 61750043.01901821`  
+```python
+def calcMSE():
+    train_karma_pred = model.predict(TRAIN_CREATED)
+    test_karma_pred = model.predict(TEST_CREATED)
+    train_MSE = mean_squared_error(train_karma, train_karma_pred)
+    test_MSE = mean_squared_error(test_karma, test_karma_pred)
+```
 ## Part 4 - Pearson's r
-
+Write about Pearson's r  
+`r (training): -0.35941580366452558`   
+`r (testing): -0.36569769103632976`  
+```python
+def calcPR():
+    train_PR = pearsonr(train_created, train_karma)
+    test_PR = pearsonr(test_created, test_karma)
+```
 ## Part 5 - Predictions
