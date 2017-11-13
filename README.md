@@ -21,7 +21,8 @@ def trainAndPlot():
     print("b: ", model.intercept_)
 ```
 ## Part 2 - Mean Absolute Error
-Write about MAE  
+The result numbers tell us that the average difference between the data-set containing actual data (training and testing), and the data set containing predicted data is about `4535`.  
+The difference between the 2 results; `4535` and `4363` comes due to them containing different data. If both data-sets were identical, then the results would also be.  
 `MAE (training): 4535.2278195244253`   
 `MAE (testing): 4363.9936837520208`  
 ```python
