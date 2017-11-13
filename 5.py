@@ -2,6 +2,7 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import linear_model
+from pylab import polyfit, poly1d
 
 traindata = 'training2.json'
 testdata = 'testing.json'
@@ -20,11 +21,13 @@ def formatData():
     global test_karma
     global test_created
     global np_train
+    global TRAIN_CREATED
     
     train_karma = []
     train_created = []
     test_karma = []
     test_created = []
+    TRAIN_CREATED = []
     
     for i in training_data:
         train_karma.append(i["karma"])
@@ -34,22 +37,26 @@ def formatData():
         test_karma.append(j["karma"])
         test_created.append(j["created"])
         
-    train_created = np.array([train_created])
-    train_created = train_created.T
-    print(train_created)
+    TRAIN_CREATED = np.array([train_created])
+    TRAIN_CREATED = TRAIN_CREATED.T    
 
-def train():
-    x,y = train_created, train_karma
+#Part 1
+def trainAndPlot():
+    X,y = TRAIN_CREATED, train_karma
+    x = train_created
+    
     model = linear_model.LinearRegression()
-    model.fit(x, y)
-
-    plt.scatter(x,y)
+    model.fit(X, y)
+    
+    fit = np.polyfit(x, y, deg=1)
+    fit_fn = np.poly1d(fit)
+    plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
     plt.show()
 
 def run():
     getData()
     formatData()
-    train()
+    trainAndPlot()
     print('done')
 
 run()
