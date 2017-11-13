@@ -56,3 +56,5 @@ def calcPR():
     test_PR = pearsonr(test_created, test_karma)
 ```
 ## Part 5 - Predictions
+We can use the model to find out how long it would take to reach `1000` karma, which is about `1454813038`. I couldn't think of another way to calculate that number, without creating a new model, other than using `model.predict()` in a python shell untill the result was close to `1000`. I am sure there is a better way and more accurate way to achieve the most fitting result.  
+Since of all of the prediction calculations are based on the linear model, which is based purely on the json data we were provided, the best way that I can think of, is to feed it even more data. There are some users in the data-set which heavily deviate from the average user, which could scew the results.
