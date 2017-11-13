@@ -20,7 +20,6 @@ def formatData():
     global train_created
     global test_karma
     global test_created
-    global np_train
     global TRAIN_CREATED
     
     train_karma = []
@@ -42,6 +41,8 @@ def formatData():
 
 #Part 1
 def trainAndPlot():
+    global model
+    
     X,y = TRAIN_CREATED, train_karma
     x = train_created
     
@@ -60,8 +61,3 @@ def run():
     print('done')
 
 run()
-
-
-
-    
-
