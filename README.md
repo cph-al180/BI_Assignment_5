@@ -2,9 +2,9 @@
 
 ## Part 1   
 
-![Scatter Plot of Data](HackerNewsPlot.png.png)
+![Scatter Plot of Data](HackerNewsPlot.png)  
 `a: -4.3054089103938141e-05`  
-`b: 63661.886865183958`
+`b: 63661.886865183958`  
 ```python
 def trainAndPlot():
     X,y = TRAIN_CREATED, train_karma
