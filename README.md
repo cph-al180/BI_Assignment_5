@@ -17,7 +17,7 @@ def trainAndPlot():
     fit_fn = np.poly1d(fit)
     plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
     plt.show()
-    print("a: ", model.coef_[0])
+    print("a: ", model.coef_)
     print("b: ", model.intercept_)
 ```
 ## Part 2 - Mean Absolute Error
