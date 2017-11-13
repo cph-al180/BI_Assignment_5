@@ -17,11 +17,11 @@ def trainAndPlot():
     fit_fn = np.poly1d(fit)
     plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
     plt.show()
-    print("a: ", model.coef_)
+    print("a: ", model.coef_[0])
     print("b: ", model.intercept_)
 ```
 ## Part 2 - Mean Absolute Error
-The result numbers tell us that the average difference between the data-set containing actual data (training and testing), and the data set containing predicted data is about `4535`.  
+The result numbers tell us that the average difference between the data-set containing actual data (training and testing), and the data-set containing predicted karma is about `4535`.  
 The difference between the 2 results; `4535` and `4363` comes due to them containing different data. If both data-sets were identical, then the results would also be.  
   
 `MAE (training): 4535.2278195244253`   
@@ -34,7 +34,7 @@ def calcMAE():
     test_MAE = mean_absolute_error(test_karma, test_karma_pred)
 ```
 ## Part 3 - Mean Squared Error  
-Write about MSE  
+The MSE results that I've ended up with are very confusing to me, considering they're supposed to be between `0` and `1` (best to worst), and I've been unable to figure out why they don't make sense.
 `MSE (training): 104656390.75364754`   
 `MSE (testing): 61750043.01901821`  
 ```python
