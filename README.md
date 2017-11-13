@@ -1,7 +1,9 @@
 # Business Intelligence Assignment 5 - Machine Learning
 
 ## Part 1   - Training Model and Scatter Plot
-Write 4 lines about a and b  
+`y = ax + b`  
+What does the `a` value mean: The a value is the value of Y when x is equal to 0. If x is never zero, then this value is not relevant.   
+What do the `b` value mean: B is the coeffecient of X. Determines how much Y changes for each one-unit change to x.  
 ![Scatter Plot of Data](HackerNewsPlot.png)  
 `a: -4.3054089103938141e-05`  
 `b: 63661.886865183958`  
