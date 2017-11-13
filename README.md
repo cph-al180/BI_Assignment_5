@@ -1,6 +1,6 @@
 # Business Assignment 5 - Machine Learning
 
-## Part 1   
+## Part 1   - Training Model and Scatter Plot
 
 ![Scatter Plot of Data](HackerNewsPlot.png)  
 `a: -4.3054089103938141e-05`  
@@ -18,10 +18,10 @@ def trainAndPlot():
     print("a: ", model.coef_[0])
     print("b: ", model.intercept_)
 ```
-## Part 2
+## Part 2 - Mean Absolute Error
 
-## Part 3
+## Part 3 - Mean Squared Error
 
-## Part 4
+## Part 4 - Pearson's r
 
-## Part 5
+## Part 5 - Predictions
