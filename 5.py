@@ -63,7 +63,10 @@ def trainAndPlot():
     fit = np.polyfit(x, y, deg=1)
     fit_fn = np.poly1d(fit)
     plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
-    plt.savefig('HackerNewsPlot.png')
+    plt.show()
+    #plt.savefig('HackerNewsPlot.png')
+    print("a: ", model.coef_[0])
+    print("b: ", model.intercept_)
 
 def calcMAE():
     train_karma_pred = model.predict(TRAIN_CREATED)
@@ -71,7 +74,7 @@ def calcMAE():
     
     train_MAE = mean_absolute_error(train_karma, train_karma_pred)
     test_MAE = mean_absolute_error(test_karma, test_karma_pred)
-
+    
     print('Train MAE: ', train_MAE)
     print('Test MAE: ', test_MAE)
 
