@@ -45,7 +45,7 @@ def calcMSE():
     test_MSE = mean_squared_error(test_karma, test_karma_pred)
 ```
 ## Part 4 - Pearson's r
-Write about Pearson's r  
+Pearson's r value describes the correlation between 2 variables, which in our case is `created`and `karma`. The result is between `-1` and `1`. This value is representated by the linear regression line in the scatter plot image. Pearson's r is different from MAE and MSE because it calculates the correlation between `x`and `y` values throughout an entire data-set, and does not take into account any predicted values.  
 `r (training): -0.35941580366452558`   
 `r (testing): -0.36569769103632976`  
 ```python
