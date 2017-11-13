@@ -63,7 +63,7 @@ def trainAndPlot():
     fit = np.polyfit(x, y, deg=1)
     fit_fn = np.poly1d(fit)
     plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
-    plt.show()
+    plt.savefig('HackerNewsPlot.png')
 
 def calcMAE():
     train_karma_pred = model.predict(TRAIN_CREATED)
