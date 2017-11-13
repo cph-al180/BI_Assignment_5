@@ -6,7 +6,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 from pylab import polyfit, poly1d
 from scipy.stats.stats import pearsonr
 
-traindata = 'training2.json'
+traindata = 'training.json'
 testdata = 'testing.json'
   
 def getData():
@@ -33,10 +33,18 @@ def formatData():
     TEST_CREATED = []
     
     for i in training_data:
+        if not i.has_key('karma'):
+            i["karma"] = 0;
+        if not i.has_key('created'):
+            i["created"] = 1509813038
         train_karma.append(i["karma"])
         train_created.append(i["created"])
-        
+
     for j in testing_data:
+        if not j.has_key('karma'):
+            j["karma"] = 0;
+        if not j.has_key('created'):
+            j["created"] = 1509813038
         test_karma.append(j["karma"])
         test_created.append(j["created"])
         
