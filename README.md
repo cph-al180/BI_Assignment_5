@@ -1,7 +1,9 @@
 # Business Intelligence Assignment 5 - Machine Learning
 
 ## Part 1   - Training Model and Scatter Plot
-Write 4 lines about a and b  
+`y = ax + b`  
+What does the `a` value mean: The `a` value is the value of `y` when `x` is equal to 0. If `x` is never zero, then this value is not relevant.   
+What does the `b` value mean: `b` is the coeffecient of `x`. It determines how much `y` changes for each one-unit change to `x`.  
 ![Scatter Plot of Data](HackerNewsPlot.png)  
 `a: -4.3054089103938141e-05`  
 `b: 63661.886865183958`  
@@ -19,7 +21,9 @@ def trainAndPlot():
     print("b: ", model.intercept_)
 ```
 ## Part 2 - Mean Absolute Error
-Write about MAE  
+The result numbers tell us that the average difference between the data-set containing actual data (training and testing), and the data set containing predicted data is about `4535`.  
+The difference between the 2 results; `4535` and `4363` comes due to them containing different data. If both data-sets were identical, then the results would also be.  
+  
 `MAE (training): 4535.2278195244253`   
 `MAE (testing): 4363.9936837520208`  
 ```python
