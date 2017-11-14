@@ -44,7 +44,7 @@ def calcMSE():
     test_karma_pred = model.predict(TEST_CREATED)
     train_MSE = mean_squared_error(train_karma, train_karma_pred)
     test_MSE = mean_squared_error(test_karma, test_karma_pred)
-	train_MSE = math.sqrt(train_MSE)
+    train_MSE = math.sqrt(train_MSE)
     test_MSE = math.sqrt(test_MSE)
 ```
 ## Part 4 - Pearson's r
