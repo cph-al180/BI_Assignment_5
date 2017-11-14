@@ -87,6 +87,7 @@ def calcMSE():
     test_MSE = mean_squared_error(test_karma, test_karma_pred)
     train_MSE = math.sqrt(train_MSE)
     test_MSE = math.sqrt(test_MSE)
+    
     print('Train MSE: ', train_MSE)
     print('Test MSE: ', test_MSE)
 
