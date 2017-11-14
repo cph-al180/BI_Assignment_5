@@ -1,6 +1,7 @@
 import json
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from pylab import polyfit, poly1d
@@ -65,7 +66,7 @@ def trainAndPlot():
     plt.plot(X, y, 'ro', X, fit_fn(X), 'b')
     plt.show()
     #plt.savefig('HackerNewsPlot.png')
-    print("a: ", model.coef_[0])
+    print("a: ", model.coef_)
     print("b: ", model.intercept_)
 
 def calcMAE():
@@ -84,7 +85,8 @@ def calcMSE():
 
     train_MSE = mean_squared_error(train_karma, train_karma_pred)
     test_MSE = mean_squared_error(test_karma, test_karma_pred)
-    
+    train_MSE = math.sqrt(train_MSE)
+    test_MSE = math.sqrt(test_MSE)
     print('Train MSE: ', train_MSE)
     print('Test MSE: ', test_MSE)
 
