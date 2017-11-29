@@ -105,6 +105,7 @@ def run():
     calcMAE()
     calcMSE()
     calcPR()
+    print 'Score: ', model.score(, test_karma)
     print('done')
 
 run()
